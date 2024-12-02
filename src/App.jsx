@@ -23,13 +23,17 @@ function App() {
   return (
     <>
       <div>
-        {movies.map((movie, index) => (
-          <div key={index}>
-            {movie.movie_id}
+        {movies.map((movie) => (
+          <div key={movie.movie_id}>
             {movie.title}
-            {movie.director}
-            {movie.type}
-            {movie.rating}
+            Testing
+            {
+              <img
+                src={movie.imageFile}
+                alt={`Image of ${movie.title}`}
+                srcset=""
+              />
+            }
           </div>
         ))}
       </div>
