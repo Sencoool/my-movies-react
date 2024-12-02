@@ -23,15 +23,15 @@ function App() {
   return (
     <>
       <div>
-        {movies.map((movie, index) => {
+        {movies.map((movie, index) => (
           <div key={index}>
             {movie.movie_id}
             {movie.title}
             {movie.director}
             {movie.type}
             {movie.rating}
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
     </>
   );
