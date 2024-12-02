@@ -26,14 +26,7 @@ function App() {
         {movies.map((movie) => (
           <div key={movie.movie_id}>
             {movie.title}
-            Testing
-            {
-              <img
-                src={movie.imageFile}
-                alt={`Image of ${movie.title}`}
-                srcset=""
-              />
-            }
+            {<img src={movie.imageFile} alt={`Image of ${movie.title}`} />}
           </div>
         ))}
       </div>
