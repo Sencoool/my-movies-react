@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
@@ -27,8 +28,16 @@ function App() {
           <div key={movie.movie_id}>
             {movie.title}
             {<img src={movie.imageFile} alt={`Image of ${movie.title}`} />}
+            <Link to={`/editmovie`}>
+              <button>Edit</button>
+            </Link>
           </div>
         ))}
+      </div>
+      <div>
+        <Link to={`/createmovie`}>
+          <button>Create</button>
+        </Link>
       </div>
     </>
   );
