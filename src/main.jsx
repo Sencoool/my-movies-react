@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Create from "./Create.jsx";
 import Edit from "./Edit.jsx";
+import Delete from "./Delete.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/editmovie/:id",
     element: <Edit />,
+  },
+  {
+    path: "/deletemovie",
+    element: <Delete />,
   },
 ]);
 

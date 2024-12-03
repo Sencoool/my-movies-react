@@ -45,6 +45,9 @@ function App() {
         <Link to={`/createmovie`}>
           <button>Create</button>
         </Link>
+        <Link to={`/deletemovie`}>
+          <button>Delete</button>
+        </Link>
       </div>
     </>
   );
