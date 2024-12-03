@@ -12,6 +12,9 @@ function Edit() {
   return (
     <>
       <div>Hello Edit</div>
+      <Link to={`/`}>
+        <button>Homepage</button>
+      </Link>
     </>
   );
 }

@@ -27,7 +27,13 @@ function App() {
         {movies.map((movie) => (
           <div key={movie.movie_id}>
             {movie.title}
-            {<img src={movie.imageFile} alt={`Image of ${movie.title}`} />}
+            {
+              <img
+                src={`${BASE_URL}/images/${movie.imageFile}`}
+                alt={`Image of ${movie.title}`}
+              />
+            }
+            <p>รูปภาพ {movie.imageFile}</p>
             <Link to={`/editmovie`}>
               <button>Edit</button>
             </Link>
