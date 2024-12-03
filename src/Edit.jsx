@@ -29,9 +29,12 @@ function Edit() {
 
   async function updateMovie() {
     try {
-      await axios.put(`${BASE_URL}/movie/${movieID}`, {
-        title: movie,
+      // console.log(movie.title);
+
+      await axios.put(`${BASE_URL}/movie/${id}`, {
+        title: movie.title,
       });
+      // alert("Update Successful");
     } catch (error) {
       console.log("error", error);
     }
@@ -43,16 +46,20 @@ function Edit() {
 
   return (
     <>
-      <div>Hello Edit Movie {id}</div>
+      <div>Hello Edit Movie {movie.movie_id}</div>
       <div>{movie.title}</div>
       <div>
         <input type="text" onChange={handleMovieChange} value={movie.title} />
       </div>
       <div>
-        <button type="submit">แก้ไข</button>
+        <Link to={`/`}>
+          <button onClick={updateMovie} type="submit">
+            แก้ไข
+          </button>
+        </Link>
       </div>
       <Link to={`/`}>
-        <button onClick={() => updateMovie}>Homepage</button>
+        <button>Homepage</button>
       </Link>
     </>
   );
