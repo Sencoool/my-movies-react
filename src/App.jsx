@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
@@ -26,16 +27,27 @@ function App() {
         {movies.map((movie) => (
           <div key={movie.movie_id}>
             {movie.title}
-            Testing
             {
               <img
-                src={movie.imageFile}
+                src={`${BASE_URL}/images/${movie.imageFile}`}
                 alt={`Image of ${movie.title}`}
-                srcset=""
               />
             }
+            <p>รหัสหนัง {movie.movie_id}</p>
+            <p>รูปภาพ {movie.imageFile}</p>
+            <Link to={`/editmovie/${movie.movie_id}`}>
+              <button>Edit</button>
+            </Link>
           </div>
         ))}
+      </div>
+      <div>
+        <Link to={`/createmovie`}>
+          <button>Create</button>
+        </Link>
+        <Link to={`/deletemovie`}>
+          <button>Delete</button>
+        </Link>
       </div>
     </>
   );
