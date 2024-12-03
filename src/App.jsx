@@ -33,8 +33,9 @@ function App() {
                 alt={`Image of ${movie.title}`}
               />
             }
+            <p>รหัสหนัง {movie.movie_id}</p>
             <p>รูปภาพ {movie.imageFile}</p>
-            <Link to={`/editmovie`}>
+            <Link to={`/editmovie/${movie.movie_id}`}>
               <button>Edit</button>
             </Link>
           </div>

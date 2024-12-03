@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Create />,
   },
   {
-    path: "/editmovie",
+    path: "/editmovie/:id",
     element: <Edit />,
   },
 ]);
