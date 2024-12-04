@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import Create from "./Create.jsx";
-import Edit from "./Edit.jsx";
+import Editmovie from "./Editmovie.jsx";
 import Delete from "./Delete.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/editmovie/:id",
-    element: <Edit />,
+    element: <Editmovie />,
   },
   {
     path: "/deletemovie",

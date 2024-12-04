@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
+import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <div>
         {movies.map((movie) => (
           <div key={movie.movie_id}>
@@ -41,14 +44,7 @@ function App() {
           </div>
         ))}
       </div>
-      <div>
-        <Link to={`/createmovie`}>
-          <button>Create</button>
-        </Link>
-        <Link to={`/deletemovie`}>
-          <button>Delete</button>
-        </Link>
-      </div>
+      <Footer />
     </>
   );
 }

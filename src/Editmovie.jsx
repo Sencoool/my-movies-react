@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -46,6 +48,7 @@ function Edit() {
 
   return (
     <>
+      <Navbar />
       <div>Hello Edit Movie {movie.movie_id}</div>
       <div>{movie.title}</div>
       <div>
@@ -58,9 +61,8 @@ function Edit() {
           </button>
         </Link>
       </div>
-      <Link to={`/`}>
-        <button>Homepage</button>
-      </Link>
+
+      <Footer />
     </>
   );
 }
