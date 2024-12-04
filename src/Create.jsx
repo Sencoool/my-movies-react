@@ -1,6 +1,8 @@
 import { Form, Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import axios from "axios";
+import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -37,6 +39,7 @@ function Create() {
 
   return (
     <>
+      <Navbar />
       <div>Hello Create</div>
       <form ref={refResetForm}>
         <input
@@ -56,11 +59,8 @@ function Create() {
           </button>
         </div>
       </form>
-      <div>
-        <Link to={`/`}>
-          <button>Homepage</button>
-        </Link>
-      </div>
+
+      <Footer />
     </>
   );
 }

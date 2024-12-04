@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -37,6 +39,7 @@ function Delete() {
 
   return (
     <>
+      <Navbar />
       {isLoading ? (
         <div>Loading...</div>
       ) : (
@@ -55,13 +58,9 @@ function Delete() {
               </button>
             </div>
           ))}
-          <div>
-            <Link to={`/`}>
-              <button>Homepage</button>
-            </Link>
-          </div>
         </div>
       )}
+      <Footer />
     </>
   );
 }
