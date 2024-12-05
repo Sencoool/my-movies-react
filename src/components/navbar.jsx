@@ -5,11 +5,6 @@ export default function navbar() {
   return (
     <>
       <header>
-        {/* <img
-          src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-          alt="netflix logo"
-          className="logo"
-        /> */}
         <h1>Jiramet</h1>
         <nav>
           <ul>

@@ -1,25 +1,105 @@
 .BigImage {
   width: 100%;
-  height: 850px;
+  height: 100vh;
+  max-height: 100%; /* เพิ่มบรรทัดนี้ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.Movieslide {
-  width: 100%;
-  height: 100%;
+.BigImage img {
+  width: 1920px;
+  height: 100%; /* เปลี่ยนจาก auto เป็น 100% */
+  object-fit: cover;
+  object-position: center; /* เพิ่มการจัดตำแหน่งกลาง */
+}
+
+.MovieWrapper {
+  background-color: #000; /* สีของ margin */
+  padding: 10px; /* ช่องว่างระหว่าง border และ MovieSection */
+}
+
+.MovieSection {
+  background-color: #000; /* พื้นหลังหลัก */
+  color: white; /* สีตัวอักษร */
+  padding: 20px; /* ช่องว่างภายใน */
+}
+
+.MovieSection h1 {
+  font-size: 2rem;
+  color: #f9f9f9;
+}
+
+.Movieslide-container {
   display: flex;
-  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบ container */
+  background-color: #f9f9f9; /* สีพื้นหลังอ่อนๆ */
+  position: relative;
   background: #000;
 }
 
-.Movieslide img {
-  width: 100%;
-  height: 100%;
-  border: 10px solid red;
-}
-
-ul {
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* ปุ่มโปร่งแสง */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
-.carousel-root {
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* สีปุ่มเมื่อ hover */
+}
+
+.left-btn {
+  left: 10px; /* ปุ่มด้านซ้าย */
+}
+
+.right-btn {
+  right: 10px; /* ปุ่มด้านขวา */
+}
+
+.Movieslide {
+  display: flex;
+  gap: 10px; /* เพิ่มช่องว่างระหว่าง card */
+  overflow-x: hidden; /* เปิดการเลื่อนในแนวนอน */
+  scroll-behavior: smooth; /* การเลื่อนที่นุ่มนวล */
+  width: 100%; /* เต็มความกว้างของ container */
+  padding: 10px;
+  background: #000;
+}
+
+.card {
+  flex-shrink: 0; /* ป้องกัน card ย่อ/ขยาย */
+  width: 300px; /* กำหนดขนาด card */
+  border-radius: 15px; /* มุมโค้งของ card */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของ card */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* ขยาย card เล็กน้อยเมื่อ hover */
+}
+
+.card img {
+  width: 100%; /* รูปภาพเต็มความกว้างของ card */
+  height: 200px; /* กำหนดความสูงของภาพ */
+  object-fit: cover; /* ครอบรูปภาพให้พอดี card */
 }
