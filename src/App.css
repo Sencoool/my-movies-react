@@ -1,34 +1,78 @@
 .BigImage {
   width: 100%;
   height: 100vh;
-  max-height: 100%; /* เพิ่มบรรทัดนี้ */
+  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
+.BigImage .info {
+  width: 30%;
+  position: absolute;
+  left: 3%;
+  bottom: 2%;
+  color: #f9f9f9;
+  user-select: none;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family: "Prompt", sans-serif;
+}
+
+.BigImage .info p {
+  font-size: 20px;
+}
+
 .BigImage img {
-  width: 1920px;
-  height: 100%; /* เปลี่ยนจาก auto เป็น 100% */
-  object-fit: cover;
-  object-position: center; /* เพิ่มการจัดตำแหน่งกลาง */
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  width: 20%;
+}
+
+.button-31 {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 44px;
+  min-width: 10px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: 0.75;
 }
 
 .MovieWrapper {
-  background-color: #000; /* สีของ margin */
-  padding: 10px; /* ช่องว่างระหว่าง border และ MovieSection */
+  background-color: #000;
+  padding: 10px;
 }
 
 .MovieSection {
-  background-color: #000; /* พื้นหลังหลัก */
-  color: white; /* สีตัวอักษร */
-  padding: 20px; /* ช่องว่างภายใน */
+  background-color: #000;
+  color: white;
+  padding: 20px;
 }
 
 .MovieSection h1 {
   font-size: 2rem;
   color: #f9f9f9;
+  font-family: "Prompt", sans-serif;
 }
 
 .Movieslide-container {
@@ -38,8 +82,8 @@
   justify-content: center;
   width: 100%;
   padding: 0px;
-  overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบ container */
-  background-color: #f9f9f9; /* สีพื้นหลังอ่อนๆ */
+  overflow: hidden;
+  background-color: #f9f9f9;
   position: relative;
   background: #000;
 }
@@ -48,7 +92,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5); /* ปุ่มโปร่งแสง */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
@@ -64,42 +108,41 @@
 }
 
 .scroll-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* สีปุ่มเมื่อ hover */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .left-btn {
-  left: 10px; /* ปุ่มด้านซ้าย */
+  left: 10px;
 }
 
 .right-btn {
-  right: 10px; /* ปุ่มด้านขวา */
+  right: 10px;
 }
 
 .Movieslide {
   display: flex;
-  gap: 10px; /* เพิ่มช่องว่างระหว่าง card */
-  overflow-x: hidden; /* เปิดการเลื่อนในแนวนอน */
-  scroll-behavior: smooth; /* การเลื่อนที่นุ่มนวล */
-  width: 100%; /* เต็มความกว้างของ container */
+  gap: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
   padding: 10px;
   background: #000;
 }
 
 .card {
-  flex-shrink: 0; /* ป้องกัน card ย่อ/ขยาย */
-  width: 300px; /* กำหนดขนาด card */
-  border-radius: 15px; /* มุมโค้งของ card */
+  flex-shrink: 0;
+  width: 300px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของ card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05); /* ขยาย card เล็กน้อยเมื่อ hover */
+  transform: scale(1.05);
 }
 
 .card img {
-  width: 100%; /* รูปภาพเต็มความกว้างของ card */
-  height: 200px; /* กำหนดความสูงของภาพ */
-  object-fit: cover; /* ครอบรูปภาพให้พอดี card */
+  width: 100%;
+  height: 200px;
 }

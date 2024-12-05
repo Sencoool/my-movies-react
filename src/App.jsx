@@ -23,6 +23,7 @@ function App() {
         // เลือกรูปภาพแบบสุ่มในครั้งแรกที่มีข้อมูล
         const randomIndex = Math.floor(Math.random() * movieData.length);
         setRandomMovie(movieData[randomIndex]);
+        console.log(randomMovie);
       } else {
         console.log("No movies available.");
       }
@@ -56,6 +57,13 @@ function App() {
       <Navbar />
       {randomMovie && (
         <div className="BigImage">
+          <div className="info">
+            <h1>{randomMovie.title}</h1>
+            <p>{randomMovie.desc}</p>
+            <div className="btn">
+              <button className="button-31">▶เริ่ม</button>
+            </div>
+          </div>
           <img
             src={`${BASE_URL}/images/${randomMovie.imageFile}`}
             alt="A random big picture"
