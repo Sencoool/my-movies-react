@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import axios from "axios";
 import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
+import "./Create.css";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -40,25 +41,27 @@ function Create() {
   return (
     <>
       <Navbar />
-      <div>Hello Create</div>
-      <form ref={refResetForm}>
-        <input
-          type="text"
-          onChange={(e) => setNewMovies(e.target.value)}
-          placeholder="ชื่อหนัง"
-        />
-        <input
-          type="text"
-          onChange={(e) => setNewDirector(e.target.value)}
-          placeholder="ชื่อผู้กำกับ"
-        />
-        <input type="file" onChange={(e) => setNewImage(e.target.files[0])} />
-        <div>
-          <button type="submit" onClick={() => fetchNewMovie()}>
-            Submit
-          </button>
-        </div>
-      </form>
+      <div className="Create">
+        <div>Hello Create</div>
+        <form ref={refResetForm}>
+          <input
+            type="text"
+            onChange={(e) => setNewMovies(e.target.value)}
+            placeholder="ชื่อหนัง"
+          />
+          <input
+            type="text"
+            onChange={(e) => setNewDirector(e.target.value)}
+            placeholder="ชื่อผู้กำกับ"
+          />
+          <input type="file" onChange={(e) => setNewImage(e.target.files[0])} />
+          <div>
+            <button type="submit" onClick={() => fetchNewMovie()}>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
 
       <Footer />
     </>

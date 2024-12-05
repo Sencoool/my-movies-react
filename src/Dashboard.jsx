@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
+import "./Dashboard.css";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -43,12 +44,15 @@ function Delete() {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          ลบหนัง
+        <div className="Dashboard">
+          Dashboard
           {movies.map((movie, index) => (
             <div key={index}>
               {movie.movie_id}&nbsp;
               {movie.title}&nbsp;
+              <Link to={`/editmovie/${movie.movie_id}`}>
+                <button>Edit</button>
+              </Link>
               <button
                 onClick={async () => {
                   await deleteMovie(movie.movie_id);

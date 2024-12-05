@@ -5,17 +5,17 @@ export default function navbar() {
   return (
     <>
       <header>
-        <img
+        {/* <img
           src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
           alt="netflix logo"
           className="logo"
-        />
+        /> */}
+        <h1>Jiramet</h1>
         <nav>
           <ul>
             <Link to={`/`}>Home</Link>
-            <Link to={``}>Dashboard Edit</Link>
-            <Link to={`/createmovie`}>Edit</Link>
-            <Link to={`/deletemovie`}>Delete</Link>
+            <Link to={`/dashboard`}>Dashboard</Link>
+            <Link to={`/addmovie`}>Add</Link>
           </ul>
         </nav>
         <nav>

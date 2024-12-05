@@ -4,6 +4,7 @@ import axios from "axios";
 import "./App.css";
 import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
+import { Carousel } from "react-responsive-carousel";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -26,23 +27,29 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>
-        {movies.map((movie) => (
+      <div className="BigImage">
+        <img src={``} alt="A random big picture" />
+      </div>
+      <div className="Movieslide">
+        {/* {movies.map((movie) => (
           <div key={movie.movie_id}>
-            {movie.title}
+            <Carousel>
+              <img src={`${BASE_URL}/images/${movie.imageFile}`} />
+            </Carousel>
             {
               <img
                 src={`${BASE_URL}/images/${movie.imageFile}`}
                 alt={`Image of ${movie.title}`}
               />
             }
-            <p>รหัสหนัง {movie.movie_id}</p>
-            <p>รูปภาพ {movie.imageFile}</p>
-            <Link to={`/editmovie/${movie.movie_id}`}>
-              <button>Edit</button>
-            </Link>
           </div>
-        ))}
+        ))} */}
+        <Carousel showThumbs={false} infiniteLoop={true}>
+          {/* showThumbs={false} */}
+          {movies.map((movie) => (
+            <img src={`${BASE_URL}/images/${movie.imageFile}`} alt="" />
+          ))}
+        </Carousel>
       </div>
       <Footer />
     </>
