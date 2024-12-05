@@ -60,9 +60,11 @@ function App() {
           <div className="info">
             <h1>{randomMovie.title}</h1>
             <p>{randomMovie.desc}</p>
-            <div className="btn">
-              <button className="button-31">▶เริ่ม</button>
-            </div>
+            <Link to={`/playmovie/${randomMovie.movie_id}`}>
+              <div className="btn">
+                <button className="button-31">▶เริ่ม</button>
+              </div>
+            </Link>
           </div>
           <img
             src={`${BASE_URL}/images/${randomMovie.imageFile}`}
