@@ -5,7 +5,7 @@ export default function navbar() {
   return (
     <>
       <header>
-        <h1>Jiramet</h1>
+        <img src="./public/Jflix.png" alt="netflix logo" class="logo" />
         <nav>
           <ul>
             <Link to={`/`}>Home</Link>

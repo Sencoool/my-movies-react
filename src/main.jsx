@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Create from "./Create.jsx";
 import Editmovie from "./Editmovie.jsx";
 import Dashboard from "./Dashboard.jsx";
+import Playmovie from "./Playmovie.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/playmovie/:id",
+    element: <Playmovie />,
   },
 ]);
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
+import { Link } from "react-router-dom";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -71,10 +72,12 @@ function App() {
             <div className="Movieslide" ref={scrollContainerRef}>
               {movies.map((movie, index) => (
                 <div className="card" key={index}>
-                  <img
-                    src={`${BASE_URL}/images/${movie.imageFile}`}
-                    alt={`Image of ${movie.title}`}
-                  />
+                  <Link to={`/playmovie/${movie.movie_id}`}>
+                    <img
+                      src={`${BASE_URL}/images/${movie.imageFile}`}
+                      alt={`Image of ${movie.title}`}
+                    />
+                  </Link>
                 </div>
               ))}
             </div>
