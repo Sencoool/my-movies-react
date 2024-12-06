@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import Youtube from "react-youtube";
+import getYouTubeID from "get-youtube-id";
 import "./App.css";
 import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
@@ -10,7 +12,24 @@ const BASE_URL = "http://localhost:3000";
 function App() {
   const [movies, setMovies] = useState([]);
   const [randomMovie, setRandomMovie] = useState(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
   const scrollContainerRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const playerRef = useRef(null);
+
+  const opts = {
+    width: "100%",
+    height: "100%",
+    border: "none",
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      rel: 0,
+      disablekb: 1,
+      fs: 0,
+      mute: 1,
+    },
+  };
 
   async function fetchMovie() {
     try {
@@ -19,11 +38,8 @@ function App() {
 
       if (movieData.length > 0) {
         setMovies(movieData);
-
-        // เลือกรูปภาพแบบสุ่มในครั้งแรกที่มีข้อมูล
         const randomIndex = Math.floor(Math.random() * movieData.length);
         setRandomMovie(movieData[randomIndex]);
-        console.log(randomMovie);
       } else {
         console.log("No movies available.");
       }
@@ -31,18 +47,6 @@ function App() {
       console.log("error", error);
     }
   }
-
-  useEffect(() => {
-    fetchMovie();
-  }, []);
-
-  // ตรวจสอบว่าหาก `movies` มีข้อมูล จะสุ่ม `randomMovie` ใหม่ทุกครั้ง
-  useEffect(() => {
-    if (movies.length > 0 && randomMovie === null) {
-      const randomIndex = Math.floor(Math.random() * movies.length);
-      setRandomMovie(movies[randomIndex]);
-    }
-  }, [movies, randomMovie]);
 
   const scrollLeft = () => {
     scrollContainerRef.current.scrollBy({ left: -1200, behavior: "smooth" });
@@ -52,6 +56,35 @@ function App() {
     scrollContainerRef.current.scrollBy({ left: 1200, behavior: "smooth" });
   };
 
+  const toggleMute = () => {
+    if (playerRef.current) {
+      if (isMuted) {
+        playerRef.current.unMute();
+      } else {
+        playerRef.current.mute();
+      }
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const onPlayerReady = (event) => {
+    playerRef.current = event.target;
+    if (isMuted) {
+      playerRef.current.mute();
+    }
+  };
+
+  useEffect(() => {
+    fetchMovie();
+  }, []);
+
+  useEffect(() => {
+    if (movies.length > 0 && randomMovie === null) {
+      const randomIndex = Math.floor(Math.random() * movies.length);
+      setRandomMovie(movies[randomIndex]);
+    }
+  }, [movies, randomMovie]);
+
   return (
     <>
       <Navbar />
@@ -60,15 +93,20 @@ function App() {
           <div className="info">
             <h1>{randomMovie.title}</h1>
             <p>{randomMovie.desc}</p>
-            <Link to={`/playmovie/${randomMovie.movie_id}`}>
-              <div className="btn">
-                <button className="button-31">▶เริ่ม</button>
-              </div>
-            </Link>
+            <div className="btn">
+              <Link to={`/playmovie/${randomMovie.movie_id}`}>
+                <button className="button">▶เริ่ม</button>
+              </Link>
+              <button onClick={toggleMute} className="button">
+                {isMuted ? "🔇 ปิดเสียง" : "🔊 เปิดเสียง"}
+              </button>
+            </div>
           </div>
-          <img
-            src={`${BASE_URL}/images/${randomMovie.imageFile}`}
-            alt="A random big picture"
+          <Youtube
+            videoId={getYouTubeID(randomMovie.teaser_url)}
+            opts={opts}
+            className={`youtube-video ${isVideoReady ? "visible" : "hidden"}`}
+            onReady={onPlayerReady}
           />
         </div>
       )}

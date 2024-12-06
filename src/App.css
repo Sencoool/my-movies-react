@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .BigImage .info {
@@ -15,13 +16,13 @@
   bottom: 2%;
   color: #f9f9f9;
   user-select: none;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
   font-family: "Prompt", sans-serif;
 }
 
-.BigImage .info p {
-  font-size: 20px;
+.BigImage .info h1 {
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .BigImage img {
@@ -30,11 +31,15 @@
 }
 
 .btn {
-  width: 20%;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  pointer-events: auto;
+  gap: 10px;
 }
 
-.button-31 {
-  background-color: #222;
+.button {
+  background-color: #2a3335;
   border-radius: 4px;
   border-style: none;
   color: #fff;
@@ -42,7 +47,7 @@
   font-size: 16px;
   font-weight: 700;
   min-height: 44px;
-  min-width: 10px;
+  min-width: 100px;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -51,10 +56,12 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 100%;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
-.button-31:hover,
-.button-31:focus {
+.button:hover,
+.button:focus {
+  background-color: #4a5557;
   opacity: 0.75;
 }
 
@@ -131,7 +138,7 @@
 
 .card {
   flex-shrink: 0;
-  width: 200px;
+  width: 180px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

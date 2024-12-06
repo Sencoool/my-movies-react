@@ -19,8 +19,8 @@ export default function Playmovie() {
     height: "100%",
     playerVars: {
       autoplay: 0,
-      modestbranding: 1, // ลดขนาดโลโก้ YouTube
-      controls: 1, // แสดงปุ่มควบคุม
+      modestbranding: 1,
+      controls: 1,
     },
   };
 

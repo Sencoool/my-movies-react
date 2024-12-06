@@ -12,17 +12,6 @@ function Delete() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const btn = [
-    {
-      action: (
-        <div>
-          <button className="editBtn"></button>
-          <button className="deleteBtn"></button>
-        </div>
-      ),
-    },
-  ];
-
   const columns = [
     {
       name: "MovieID",
@@ -60,6 +49,16 @@ function Delete() {
     },
   ];
 
+  const customStyles = {
+    headCells: {
+      style: {
+        backgroundColor: "black",
+        color: "white",
+        fontWeight: "bolder",
+      },
+    },
+  };
+
   async function fetchMovie() {
     try {
       const response = await axios.get(`${BASE_URL}/movies`);
@@ -95,7 +94,11 @@ function Delete() {
         <div>Loading...</div>
       ) : (
         <div className="Dashboard">
-          <DataTable columns={columns} data={movies}></DataTable>
+          <DataTable
+            columns={columns}
+            data={movies}
+            customStyles={customStyles}
+          ></DataTable>
           Dashboard
           {movies.map((movie, index) => (
             <div key={index}>
