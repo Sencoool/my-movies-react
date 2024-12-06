@@ -62,7 +62,7 @@ function Edit() {
         <input type="file" onChange={(e) => setNewImage(e.target.files[0])} />
         <div>
           <Link to={`/dashboard`}>
-            <button onClick={updateMovie} type="submit">
+            <button className="onEdit" onClick={updateMovie} type="submit">
               แก้ไข
             </button>
           </Link>
