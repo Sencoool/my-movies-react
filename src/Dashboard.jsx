@@ -16,6 +16,7 @@ function Delete() {
     {
       name: "MovieID",
       selector: (row) => row.movie_id,
+      sortable: true,
     },
     {
       name: "Title",
@@ -30,9 +31,10 @@ function Delete() {
       cell: (row) => (
         <div>
           <Link to={`/editmovie/${row.movie_id}`}>
-            <button>Edit</button>
+            <button className="Edit">ปรับแต่ง</button>
           </Link>
           <button
+            className="Delete"
             onClick={async () => {
               const isConfirmed = window.confirm(
                 "คุณแน่ใจว่าจะลบข้อมูลหนังเรื่องนี้?"
@@ -52,9 +54,10 @@ function Delete() {
   const customStyles = {
     headCells: {
       style: {
-        backgroundColor: "black",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
         fontWeight: "bolder",
+        fontSize: "20px",
       },
     },
   };
@@ -98,24 +101,8 @@ function Delete() {
             columns={columns}
             data={movies}
             customStyles={customStyles}
+            pagination
           ></DataTable>
-          Dashboard
-          {movies.map((movie, index) => (
-            <div key={index}>
-              {movie.movie_id}&nbsp;
-              {movie.title}&nbsp;
-              <Link to={`/editmovie/${movie.movie_id}`}>
-                <button>Edit</button>
-              </Link>
-              <button
-                onClick={async () => {
-                  await deleteMovie(movie.movie_id);
-                }}
-              >
-                ลบ
-              </button>
-            </div>
-          ))}
         </div>
       )}
       <Footer />

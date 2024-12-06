@@ -2,4 +2,22 @@
   background: #000;
   color: white;
   padding: 0.5rem 10rem;
+  height: 772px;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 0px 2px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button.Edit {
+  background-color: black;
+}
+
+button.Delete {
+  background-color: red;
 }
