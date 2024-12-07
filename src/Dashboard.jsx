@@ -10,6 +10,7 @@ const BASE_URL = "http://localhost:3000";
 
 function Delete() {
   const [movies, setMovies] = useState([]);
+  const [records, setRecords] = useState(movies);
   const [isLoading, setIsLoading] = useState(false);
 
   const columns = [
@@ -62,6 +63,14 @@ function Delete() {
     },
   };
 
+  const handleChange = (e) => {
+    let query = e.target.value;
+    const newrecords = movies.filter((item) =>
+      item.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+    );
+    setRecords(newrecords);
+  };
+
   async function fetchMovie() {
     try {
       const response = await axios.get(`${BASE_URL}/movies`);
@@ -97,9 +106,17 @@ function Delete() {
         <div>Loading...</div>
       ) : (
         <div className="Dashboard">
+          <div className="search">
+            <h2>Movies List</h2>
+            <input
+              type="text"
+              placeholder="ค้นหาชื่อหนัง"
+              onChange={handleChange}
+            />
+          </div>
           <DataTable
             columns={columns}
-            data={movies}
+            data={records.length > 0 ? records : movies}
             customStyles={customStyles}
             pagination
           ></DataTable>

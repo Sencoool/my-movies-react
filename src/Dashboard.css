@@ -21,3 +21,14 @@ button.Delete {
   background-color: red;
   color: white;
 }
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search input {
+  padding: 0;
+  height: 30px;
+}
