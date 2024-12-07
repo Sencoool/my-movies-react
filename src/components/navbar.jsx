@@ -58,9 +58,17 @@ export default function Navbar() {
                 className="profile-image"
               />
               <ul>
-                <li className="username">Hello, {userInfo.name}</li>
+                <li className="username">สวัสดี {userInfo.name}</li>
                 <li>
-                  <button onClick={logout}>Logout</button>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      logout();
+                    }}
+                  >
+                    Logout
+                  </a>
                 </li>
               </ul>
             </>
