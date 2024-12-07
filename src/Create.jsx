@@ -112,7 +112,6 @@ function Create() {
               className="btnCreate"
               type="submit"
               onClick={() => fetchNewMovie()}
-              syt
             >
               Submit
             </button>
