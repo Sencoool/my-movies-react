@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "./Login.css";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -28,21 +29,36 @@ function Login() {
   }
 
   return (
-    <div>
-      Login
-      <input
-        type="text"
-        placeholder="Username"
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassWord(e.target.value)}
-      />
-      <button type="submit" onClick={checkLogin}>
-        เข้าสู่ระบบ
-      </button>
+    <div className="wrapper">
+      <form onSubmit={checkLogin}>
+        <h1>Login</h1>
+        <div className="input-box">
+          <input
+            type="text"
+            placeholder="username"
+            value={name}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <i className="bx bxs-user"></i>
+        </div>
+        <div className="input-box">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <i className="bx bxs-lock-alt"></i>
+        </div>
+        <button type="submit" className="btn">
+          Log in
+        </button>
+        <div className="register-link">
+          <p>
+            Don't have an account? <Link to="/register">Register</Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 }
