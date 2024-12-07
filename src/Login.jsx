@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
 const BASE_URL = "http://localhost:3000";

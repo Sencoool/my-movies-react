@@ -7,6 +7,7 @@ import Editmovie from "./Editmovie.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Playmovie from "./Playmovie.jsx";
 import Login from "./Login.jsx";
+import Register from "./Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
