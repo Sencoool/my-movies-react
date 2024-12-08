@@ -1,94 +1,85 @@
-.wrapper {
-  background-color: #000; /* สีพื้นหลังเป็นสีดำ */
-  color: #fff; /* สีข้อความเป็นสีขาว */
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
-  font-family: "Prompt", sans-serif;
+  background-color: #101111;
 }
 
-form {
-  background-color: #1a1a1a; /* สีพื้นหลังของฟอร์ม */
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.wrapper {
+  background-color: #333;
+  color: #fff;
   width: 100%;
   max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
-h1 {
-  color: #fff; /* สีหัวข้อ */
-  text-align: center;
+.wrapper h1 {
+  font-size: 24px;
   margin-bottom: 20px;
+}
+
+.wrapper .webname h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #9370db;
 }
 
 .input-box {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input-box input {
   width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #333; /* สีพื้นหลังของช่องป้อนข้อมูล */
-  color: #fff; /* สีข้อความ */
-  font-family: "Prompt", sans-serif;
-}
-
-.input-box input::placeholder {
-  color: #bbb; /* สีของ placeholder */
+  padding: 10px 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .input-box i {
   position: absolute;
-  top: 10px;
+  top: 50%;
   right: 10px;
-  color: #bbb; /* สีของไอคอน */
+  transform: translateY(-50%);
+  color: #aaa;
 }
 
-.remember-forget {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  color: #ccc; /* สีของข้อความเพิ่มเติม */
-}
-
-.remember-forget a {
-  color: #a4a4ff; /* สีของลิงก์ */
-  text-decoration: none;
-}
-
-.remember-forget a:hover {
-  text-decoration: underline;
-}
-
-.btn {
-  background-color: #8a2be2; /* สีปุ่มเป็นสีม่วง */
-  color: #fff; /* สีข้อความในปุ่ม */
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
+.btnlog {
   width: 100%;
-  font-family: "Prompt", sans-serif;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6a0dad;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #6a0dad; /* สีปุ่มเมื่อเอาเมาส์ไปชี้ */
+.btnlog:hover {
+  background-color: #7e22e0;
+}
+
+.register-link {
+  margin-top: 20px;
 }
 
 .register-link p {
-  color: #ccc; /* สีข้อความสำหรับลิงก์การสมัคร */
-  text-align: center;
+  font-size: 14px;
 }
 
 .register-link a {
-  color: #a4a4ff; /* สีของลิงก์การสมัคร */
+  color: #9168af;
   text-decoration: none;
 }
 

@@ -7,7 +7,7 @@ const BASE_URL = "http://localhost:3000";
 
 function Login() {
   const [name, setName] = useState("");
-  const [password, setPassWord] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   async function checkLogin() {
@@ -29,37 +29,40 @@ function Login() {
   }
 
   return (
-    <div className="wrapper">
-      <form onSubmit={checkLogin}>
-        <h1>Login</h1>
-        <div className="input-box">
-          <input
-            type="text"
-            placeholder="username"
-            value={name}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <i className="bx bxs-user"></i>
+    <>
+      <div className="form">
+        <div className="wrapper">
+          <div className="webname">
+            <h1>Streaming</h1>
+          </div>
+          <h1>Login</h1>
+          <div className="input-box">
+            <input
+              type="text"
+              placeholder="ชื่อผู้ใช้งาน"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <i className="bx bxs-user"></i>
+          </div>
+          <div className="input-box">
+            <input
+              type="password"
+              placeholder="รหัสผ่าน"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <i className="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit" className="btnlog" onClick={checkLogin}>
+            Log in
+          </button>
+          <div className="register-link">
+            <p>
+              Don't have an account? <Link to="/register">Register</Link>
+            </p>
+          </div>
         </div>
-        <div className="input-box">
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <i className="bx bxs-lock-alt"></i>
-        </div>
-        <button type="submit" className="btn">
-          Log in
-        </button>
-        <div className="register-link">
-          <p>
-            Don't have an account? <Link to="/register">Register</Link>
-          </p>
-        </div>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
 
