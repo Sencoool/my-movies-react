@@ -32,7 +32,7 @@ function Delete() {
       cell: (row) => (
         <div>
           <Link to={`/editmovie/${row.movie_id}`}>
-            <button className="Edit">ปรับแต่ง</button>
+            <button className="Editthings">ปรับแต่ง</button>
           </Link>
           <button
             className="Delete"

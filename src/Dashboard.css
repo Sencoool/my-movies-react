@@ -13,8 +13,9 @@ button {
   cursor: pointer;
 }
 
-button.Edit {
+button.Editthings {
   background-color: black;
+  color: white;
 }
 
 button.Delete {

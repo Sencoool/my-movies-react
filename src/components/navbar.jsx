@@ -52,11 +52,6 @@ export default function Navbar() {
         <nav>
           {userInfo ? (
             <>
-              <img
-                src={`${BASE_URL}/images/${userInfo.profilePicture}`}
-                alt="user profile picture"
-                className="profile-image"
-              />
               <ul>
                 <li className="username">สวัสดี {userInfo.name}</li>
                 <li>
