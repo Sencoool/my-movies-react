@@ -43,7 +43,7 @@ function Login() {
           <div className="webname">
             <h1>Streaming</h1>
           </div>
-          <h1>Login</h1>
+          <h1>เข้าสู่ระบบ</h1>
           <div className="input-box">
             <input
               type="text"
