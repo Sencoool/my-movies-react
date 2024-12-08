@@ -21,7 +21,7 @@ export default function Navbar() {
       try {
         const decoded = jwtDecode(token);
         setUserInfo(decoded);
-        console.log(decoded);
+        // console.log("Token", decoded);
       } catch (error) {
         console.log("Invalid token");
       }

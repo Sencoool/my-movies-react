@@ -76,7 +76,7 @@ function Delete() {
       const response = await axios.get(`${BASE_URL}/movies`);
       setMovies(response.data);
       setIsLoading(false);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log("error", error);
     }

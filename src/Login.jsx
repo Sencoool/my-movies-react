@@ -8,6 +8,7 @@ const BASE_URL = "http://localhost:3000";
 function Login() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   async function checkLogin() {
@@ -23,16 +24,17 @@ function Login() {
         console.log("Token create successful");
         navigate("/");
       }
+
+      console.log(response.data);
+
+      if (response.data.message === "User_not_found") {
+        setError("ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง");
+        return;
+      }
     } catch (error) {
       console.log("error login", error);
     }
   }
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      checkLogin();
-    }
-  };
 
   return (
     <>
@@ -58,12 +60,13 @@ function Login() {
             />
             <i className="bx bxs-lock-alt"></i>
           </div>
+          {error && <p style={{ color: "#F28B82" }}>{error}</p>}
           <button type="submit" className="btnlog" onClick={checkLogin}>
-            Log in
+            เข้าสู่ระบบ
           </button>
           <div className="register-link">
             <p>
-              Don't have an account? <Link to="/register">Register</Link>
+              ถ้าคุณยังไม่มีผู้ใช้งาน <Link to="/register">สมัครสมาชิก</Link>
             </p>
           </div>
         </div>

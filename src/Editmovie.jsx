@@ -26,7 +26,7 @@ function Edit() {
   async function fetchMovie(movieID) {
     try {
       const response = await axios.get(`${BASE_URL}/movie/${movieID}`);
-      setMovie(response.data[1]);
+      setMovie(response.data[0]);
     } catch (error) {
       console.log("error", error);
     }

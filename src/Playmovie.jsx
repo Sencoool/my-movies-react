@@ -27,7 +27,7 @@ export default function Playmovie() {
   async function fetchMovie(movieID) {
     try {
       const response = await axios.get(`${BASE_URL}/movie/${movieID}`);
-      setMovie(response.data[1]);
+      setMovie(response.data[0]);
       console.log(getYoutubeID(movie.teaser_url));
     } catch (error) {
       console.log("error", error);

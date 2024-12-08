@@ -27,7 +27,7 @@ function Register() {
 
       const response = await axios.post(`${BASE_URL}/register`, formData);
       if (response.data.message === "al") {
-        setError("Username นี้มีอยู่ในระบบแล้ว กรุณาใช้ชื่ออื่น");
+        setError("ชื่อผู้ใช้งานนี้มีอยู่ในระบบแล้ว กรุณาใช้ชื่ออื่น");
         return;
       } else {
         setError(""); // เคลียร์ข้อความแสดงข้อผิดพลาด
@@ -39,28 +39,6 @@ function Register() {
     }
   }
   return (
-    // <div>
-    //   Register
-    //   <input
-    //     type="text"
-    //     placeholder="Username"
-    //     onChange={(e) => setNewUsername(e.target.value)}
-    //   />
-    //   <input
-    //     type="password"
-    //     placeholder="Password"
-    //     onChange={(e) => setNewPassword(e.target.value)}
-    //   />
-    //   <input
-    //     type="password"
-    //     placeholder="Confirm Password"
-    //     onChange={(e) => setNewConfirm(e.target.value)}
-    //   />
-    //   <button type="submit" onClick={fetchRegister}>
-    //     เข้าสู่ระบบ
-    //   </button>
-    //   {error && <p style={{ color: "red" }}>{error}</p>}
-    // </div>
     <>
       <div className="form">
         <div className="wrapper">
@@ -96,11 +74,11 @@ function Register() {
           </div>
           {error && <p style={{ color: "#F28B82" }}>{error}</p>}
           <button type="submit" className="btnlog" onClick={fetchRegister}>
-            Log in
+            สมัครสมาชิก
           </button>
           <div className="register-link">
             <p>
-              Already have an account? <Link to="/login">Login</Link>
+              หากคุณมีผู้ใช้งานแล้ว <Link to="/login">เข้าสู่ระบบ</Link>
             </p>
           </div>
         </div>
