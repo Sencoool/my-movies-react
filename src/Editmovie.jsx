@@ -18,7 +18,6 @@ function Edit() {
     try {
       const response = await axios.get(`${BASE_URL}/movie/${movieID}`);
       setMovie(response.data[1]);
-      // console.log(response.data[1]);
     } catch (error) {
       console.log("error", error);
     }

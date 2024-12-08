@@ -59,7 +59,7 @@ function Create() {
     <>
       <Navbar />
       <div className="Create">
-        <div>Hello Create</div>
+        <div>เพิ่มหนัง</div>
         <form ref={refResetForm}>
           <input
             type="text"
@@ -71,16 +71,19 @@ function Create() {
             onChange={(e) => setNewDirector(e.target.value)}
             placeholder="ชื่อผู้กำกับ"
           />
-          <input
-            type="text"
+          <textarea
+            className="description-textarea"
             onChange={(e) => setNewDesc(e.target.value)}
             placeholder="คำอธิบายหนัง"
-          />
-          <input
-            type="text"
+          ></textarea>
+          <select
             onChange={(e) => setNewType(e.target.value)}
             placeholder="ประเภท"
-          />
+          >
+            <option value="">เลือกประเภท</option>
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
+          </select>
           <input
             type="text"
             onChange={(e) => setNewRelease(e.target.value)}
@@ -94,8 +97,9 @@ function Create() {
           <input
             type="text"
             onChange={(e) => setNewGenre(e.target.value)}
-            placeholder="ประเภท"
+            placeholder="แท็กหนัง"
           />
+
           <input
             type="text"
             onChange={(e) => setNewRunningTime(e.target.value)}
@@ -107,16 +111,18 @@ function Create() {
             placeholder="ลิ้งค์หนัง"
           />
           <input type="file" onChange={(e) => setNewImage(e.target.files[0])} />
-          <div>
+        </form>
+        <div>
+          <div className="submit-container">
             <button
               className="btnCreate"
               type="submit"
               onClick={() => fetchNewMovie()}
             >
-              Submit
+              สร้าง
             </button>
           </div>
-        </form>
+        </div>
       </div>
 
       <Footer />

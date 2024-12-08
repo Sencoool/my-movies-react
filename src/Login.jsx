@@ -28,6 +28,12 @@ function Login() {
     }
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      checkLogin();
+    }
+  };
+
   return (
     <>
       <div className="form">

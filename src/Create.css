@@ -1,4 +1,102 @@
 .Create {
-  background: #000;
+  background-color: #101111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
   color: white;
+  height: 770px;
+}
+
+.Create > div:first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.Create form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.Create input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #1a1f1f;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* Special styling for description input */
+.Create input[placeholder="คำอธิบายหนัง"] {
+  grid-column: span 2;
+  height: 100px;
+  resize: vertical;
+}
+
+/* Dropdown for Type */
+.Create select {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #1a1f1f;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.description-textarea {
+  width: 100%;
+  grid-column: span 2;
+  min-height: 150px;
+  padding: 0.5rem;
+  background-color: #1a1f1f;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  grid-column: span 2;
+  margin-top: 1rem;
+}
+
+.btnCreate {
+  width: 200px;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btnCreate:hover {
+  background-color: #357abd;
+}
+/* File input styling */
+.Create input[type="file"] {
+  grid-column: span 2;
 }
