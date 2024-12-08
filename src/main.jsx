@@ -8,28 +8,40 @@ import Dashboard from "./Dashboard.jsx";
 import Playmovie from "./Playmovie.jsx";
 import Login from "./Login.jsx";
 import Register from "./Register.jsx";
+import ProtectedRoute from "./ProtectRoute.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <ProtectedRoute allowedRoles={["Admin", "User"]} element={<App />} />
+    ),
   },
   {
     path: "/addmovie",
-    element: <Create />,
+    element: <ProtectedRoute allowedRoles={["Admin"]} element={<Create />} />,
   },
   {
     path: "/editmovie/:id",
-    element: <Editmovie />,
+    element: (
+      <ProtectedRoute allowedRoles={["Admin"]} element={<Editmovie />} />
+    ),
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <ProtectedRoute allowedRoles={["Admin"]} element={<Dashboard />} />
+    ),
   },
   {
     path: "/playmovie/:id",
-    element: <Playmovie />,
+    element: (
+      <ProtectedRoute
+        allowedRoles={["Admin", "User"]}
+        element={<Playmovie />}
+      />
+    ),
   },
   {
     path: "/login",

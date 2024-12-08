@@ -31,6 +31,11 @@ function Login() {
         setError("ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง");
         return;
       }
+
+      if (response.data.message === "Wrong_Password") {
+        setError("ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง");
+        return;
+      }
     } catch (error) {
       console.log("error login", error);
     }
